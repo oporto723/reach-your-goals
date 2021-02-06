@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:reachYourGoals/models/goal.dart';
+import 'package:reachYourGoals/views/new_goal/goal_name_view.dart';
 
-import 'goal_date_view.dart';
-
-class NewGoalView extends StatefulWidget {
+class NewGoalStartView extends StatefulWidget {
   final Goal goal;
-  NewGoalView({Key key, @required this.goal}) : super(key: key);
+  NewGoalStartView({Key key, @required this.goal}) : super(key: key);
 
-  @override
-  _NewGoalViewState createState() => _NewGoalViewState();
+  _NewGoalStartViewState createState() => _NewGoalStartViewState();
 }
 
-class _NewGoalViewState extends State<NewGoalView> {
+class _NewGoalStartViewState extends State<NewGoalStartView> {
   int selectedRadio;
 
   void initState() {
@@ -32,9 +30,7 @@ class _NewGoalViewState extends State<NewGoalView> {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController _titleController = new TextEditingController();
-    _titleController.text = widget.goal.goalName;
-
+    final newGoal = new Goal(null, null, null, null);
     return Scaffold(
       appBar: AppBar(
         title: Text("New Goal"),
@@ -45,10 +41,6 @@ class _NewGoalViewState extends State<NewGoalView> {
             Text("New Goal"),
             Padding(
               padding: const EdgeInsets.all(30.0),
-              child: TextField(
-                controller: _titleController,
-                autofocus: true,
-              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -75,11 +67,10 @@ class _NewGoalViewState extends State<NewGoalView> {
             RaisedButton(
                 child: Text("Continue"),
                 onPressed: () {
-                  widget.goal.goalName = _titleController.text;
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => NewGoalDateView(goal: widget.goal),
+                      builder: (context) => NewGoalNameView(goal: newGoal),
                     ),
                   );
                 }),

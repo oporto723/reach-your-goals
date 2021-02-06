@@ -27,15 +27,16 @@ class NewGoalDateView extends StatelessWidget {
               ],
             ),
             RaisedButton(
-                child: Text("Continue"),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => NewGoalConfirmationView(goal: goal),
-                    ),
-                  );
-                }),
+              child: Text("Continue"),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NewGoalConfirmationView(goal: goal),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),

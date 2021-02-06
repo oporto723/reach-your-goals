@@ -26,7 +26,10 @@ class NewGoalConfirmationView extends StatelessWidget {
             ),
             Text("CONFIRM"),
             RaisedButton(
-              onPressed: () {},
+              onPressed: () {
+                // Here is where we saved in Firebase
+                Navigator.of(context).popUntil((route) => route.isFirst);
+              },
             ),
           ],
         ),
