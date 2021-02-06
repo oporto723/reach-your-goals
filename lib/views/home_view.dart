@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../models/goal.dart';
+import 'package:reachYourGoals/models/goal.dart';
 
 class HomeView extends StatelessWidget {
 // Create a list of Goals, local, to check how looks the final result
