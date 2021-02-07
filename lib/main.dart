@@ -15,6 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  // Define an async function to initialize FlutterFire
   void initializeFlutterFire() async {
     await Firebase.initializeApp();
   }

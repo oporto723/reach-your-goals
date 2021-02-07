@@ -29,6 +29,8 @@ class NewGoalDateView extends StatelessWidget {
             RaisedButton(
               child: Text("Continue"),
               onPressed: () {
+                goal.startDate = DateTime.now();
+                goal.endDate = DateTime.now();
                 Navigator.push(
                   context,
                   MaterialPageRoute(

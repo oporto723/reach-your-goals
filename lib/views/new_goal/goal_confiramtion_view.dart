@@ -1,8 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:reachYourGoals/models/goal.dart';
 
+// ignore: must_be_immutable
 class NewGoalConfirmationView extends StatelessWidget {
   final Goal goal;
+  CollectionReference _db = FirebaseFirestore.instance.collection('goals');
   NewGoalConfirmationView({Key key, @required this.goal}) : super(key: key);
 
   @override
@@ -28,6 +31,7 @@ class NewGoalConfirmationView extends StatelessWidget {
             RaisedButton(
               onPressed: () {
                 // Here is where we saved in Firebase
+                addGoal(goal);
                 Navigator.of(context).popUntil((route) => route.isFirst);
               },
             ),
@@ -35,5 +39,14 @@ class NewGoalConfirmationView extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> addGoal(Goal goal) {
+    return _db.add({
+      'goalName': goal.goalName,
+      'startDate': goal.startDate,
+      'endDate': goal.endDate,
+      'isGood': goal.isGood,
+    });
   }
 }
