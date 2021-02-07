@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "654091432476",
+    "project_id": "test-app-9a115",
+    "storage_bucket": "test-app-9a115.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654091432476:android:eb489f9bf03370d6d9e5d9",
+        "android_client_info": {
+          "package_name": "com.bejohnny.reachYourGoals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654091432476-696ug36kjhb0nv9b6rjtjtu5kmco43hf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaVlPT23OnuP2SGvLTPmbvsRXmUaoBWfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654091432476-696ug36kjhb0nv9b6rjtjtu5kmco43hf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,6 +10,7 @@ class NewGoalStartView extends StatefulWidget {
 }
 
 class _NewGoalStartViewState extends State<NewGoalStartView> {
+  final newGoal = new Goal(null, null, null, null);
   int selectedRadio;
 
   void initState() {
@@ -21,16 +22,15 @@ class _NewGoalStartViewState extends State<NewGoalStartView> {
     setState(() {
       selectedRadio = val;
       if (selectedRadio == 1) {
-        widget.goal.isGood = true;
+        newGoal.isGood = true;
       } else {
-        widget.goal.isGood = false;
+        newGoal.isGood = false;
       }
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    final newGoal = new Goal(null, null, null, null);
     return Scaffold(
       appBar: AppBar(
         title: Text("New Goal"),
