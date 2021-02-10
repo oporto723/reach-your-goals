@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reachYourGoals/views/first_view.dart';
 import 'widgets/home_widget.dart';
 
 // Import the firebase_core plugin
@@ -34,7 +35,7 @@ class _MyAppState extends State<MyApp> {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Home(),
+      home: FirstView(),
     );
   }
 }

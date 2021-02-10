@@ -56,7 +56,7 @@ class _NewGoalDateViewState extends State<NewGoalDateView> {
               children: [
                 Text(
                     "Start Date: ${DateFormat('yyyy-MM-dd').format(_startDate)}"),
-                Text("End Date ${DateFormat('yyyy-MM-dd').format(_endDate)}"),
+                Text("End Date: ${DateFormat('yyyy-MM-dd').format(_endDate)}"),
               ],
             ),
             RaisedButton(
