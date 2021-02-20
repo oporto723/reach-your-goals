@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:reachYourGoals/views/sign_in.dart';
 import 'package:reachYourGoals/widgets/home_widget.dart';
 import 'package:sign_button/sign_button.dart';
 
@@ -103,7 +104,10 @@ class FirstView extends StatelessWidget {
               child: SignInButton(
                   buttonType: ButtonType.mail,
                   //  buttonSize: ButtonSize.large,
-                  onPressed: () {}),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => SignIn()));
+                  }),
             ),
             AutoSizeText(
               "Don't have an account? Sign Up.",
