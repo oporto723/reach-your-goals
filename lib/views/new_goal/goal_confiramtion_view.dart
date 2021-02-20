@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:reachYourGoals/models/goal.dart';
+import 'package:reachYourGoals/widgets/home_widget.dart';
 
 // ignore: must_be_immutable
 class NewGoalConfirmationView extends StatelessWidget {
@@ -32,7 +33,8 @@ class NewGoalConfirmationView extends StatelessWidget {
               onPressed: () {
                 // Here is where we saved in Firebase
                 addGoal(goal);
-                Navigator.of(context).popUntil((route) => route.isFirst);
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Home()));
               },
             ),
           ],
