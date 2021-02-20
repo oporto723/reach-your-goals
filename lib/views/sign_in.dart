@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:reachYourGoals/services/auth_service.dart';
 import 'package:reachYourGoals/widgets/home_widget.dart';
@@ -5,6 +6,8 @@ import 'package:reachYourGoals/widgets/home_widget.dart';
 class SignIn extends StatelessWidget {
   TextEditingController _emailField = TextEditingController();
   TextEditingController _passwordField = TextEditingController();
+
+  AuthService _authService = new AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +33,28 @@ class SignIn extends StatelessWidget {
                 ),
                 RaisedButton(
                   onPressed: () async {
-                    bool shouldNavigate =
-                        await register(_emailField.text, _passwordField.text);
+                    bool shouldNavigate = await _authService.register(
+                        _emailField.text, _passwordField.text);
                     if (shouldNavigate) {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Home()));
                     }
                   },
                   child: Text('Register'),
+                ),
+                RaisedButton(
+                  onPressed: () async {
+                    bool shouldNavigate = await _authService.signIn(
+                        _emailField.text, _passwordField.text);
+                    if (shouldNavigate) {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Home()));
+                    } else
+                      // TODO: Create a pop up to indiceate wrong password
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => SignIn()));
+                  },
+                  child: Text('sign In'),
                 ),
               ],
             ),
