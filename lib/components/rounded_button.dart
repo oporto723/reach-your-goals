@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// RoundedButton widget
+
+//TODO: Get the color outside as a constant with the theme color
 class RoundedButton extends StatelessWidget {
   final String text;
   final Function press;
