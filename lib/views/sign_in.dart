@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:reachYourGoals/components/rounded_button.dart';
 import 'package:reachYourGoals/services/auth_service.dart';
 import 'package:reachYourGoals/widgets/home_widget.dart';
+import 'package:reachYourGoals/constants.dart';
 
 // ignore: must_be_immutable
 class SignIn extends StatelessWidget {
@@ -101,7 +102,7 @@ class TextFieldContainer extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       width: size.width * 0.75,
       decoration: BoxDecoration(
-        color: Color(0xffC5E1A5),
+        color: KPrimaryColor,
         borderRadius: BorderRadius.circular(20),
       ),
       child: child,
