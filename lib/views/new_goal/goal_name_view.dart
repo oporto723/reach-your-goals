@@ -14,7 +14,7 @@ class NewGoalNameView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("New Goal"),
+        title: Text("Give a Name!!"),
       ),
       body: Center(
         child: Column(

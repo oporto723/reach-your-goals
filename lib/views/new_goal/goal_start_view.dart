@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:reachYourGoals/components/rounded_button.dart';
 import 'package:reachYourGoals/constants.dart';
 import 'package:reachYourGoals/models/goal.dart';
@@ -44,7 +45,7 @@ class _NewGoalStartViewState extends State<NewGoalStartView> {
     final _height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        title: Text("New Goal"),
+        title: Text("Set Up the Behaivor"),
       ),
       body: Center(
         child: Column(
@@ -76,9 +77,10 @@ class _NewGoalStartViewState extends State<NewGoalStartView> {
   }
 
   final planetThumbnail = Container(
-    alignment: FractionalOffset.centerRight,
+    alignment: FractionalOffset.topRight,
     child: Container(
-      height: 300.0,
+      margin: const EdgeInsets.all(4),
+      height: 325.0,
       width: 225.0,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -92,7 +94,7 @@ class _NewGoalStartViewState extends State<NewGoalStartView> {
 
   Container newGoalBehaivorCard() {
     return Container(
-      height: 225.0,
+      height: 275.0,
       margin: EdgeInsets.only(right: 25.0),
       decoration: BoxDecoration(
         color: cardColor,
@@ -112,10 +114,6 @@ class _NewGoalStartViewState extends State<NewGoalStartView> {
             padding: const EdgeInsets.all(8.0),
             child: Container(color: KPrimaryColor),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text('Lets Start!!!'),
-          ),
           radioButtonName(),
         ],
       ),
@@ -124,28 +122,56 @@ class _NewGoalStartViewState extends State<NewGoalStartView> {
 
   Container radioButtonName() {
     return Container(
-      margin: EdgeInsets.only(left: 15, right: 100.0),
+      margin: EdgeInsets.only(left: 15, right: 15.0),
       child: Center(
         child: Column(
           children: [
-            Text("Time to Know, if is a good habit, or something bad??"),
-            Radio(
-              value: 1,
-              groupValue: selectedRadio,
-              activeColor: Colors.green,
-              onChanged: (val) {
-                print("Radio $val");
-                setSelectedRadio(val, cardColor);
-              },
+            RichText(
+              text: TextSpan(
+                  style: GoogleFonts.alegreya(
+                    color: Colors.black,
+                    fontSize: 20,
+                  ),
+                  text: "Let me Know, if is a good habit, or something ",
+                  children: <TextSpan>[
+                    TextSpan(
+                        text: "BAD,",
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                  ]),
             ),
-            Radio(
-              value: 2,
-              groupValue: selectedRadio,
-              activeColor: Colors.red,
-              onChanged: (val) {
-                print("Radio $val");
-                setSelectedRadio(val, cardColor);
-              },
+            Row(
+              children: [
+                Text("GOOD",
+                    style: GoogleFonts.alegreya(
+                      fontSize: 20,
+                    )),
+                Radio(
+                  value: 1,
+                  groupValue: selectedRadio,
+                  activeColor: Colors.green,
+                  onChanged: (val) {
+                    print("Radio $val");
+                    setSelectedRadio(val, cardColor);
+                  },
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                Text("BAD",
+                    style: GoogleFonts.alegreya(
+                      fontSize: 20,
+                    )),
+                Radio(
+                  value: 2,
+                  groupValue: selectedRadio,
+                  activeColor: Colors.red,
+                  onChanged: (val) {
+                    print("Radio $val");
+                    setSelectedRadio(val, cardColor);
+                  },
+                ),
+              ],
             ),
           ],
         ),
