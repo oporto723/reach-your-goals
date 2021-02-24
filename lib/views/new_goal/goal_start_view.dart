@@ -41,8 +41,6 @@ class _NewGoalStartViewState extends State<NewGoalStartView> {
 
   @override
   Widget build(BuildContext context) {
-    final _width = MediaQuery.of(context).size.width;
-    final _height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text("Set Up the Behaivor"),
