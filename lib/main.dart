@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:reachYourGoals/constants.dart';
 import 'package:reachYourGoals/views/first_view.dart';
-import 'widgets/home_widget.dart';
 
 // Import the firebase_core plugin
 import 'package:firebase_core/firebase_core.dart';
@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: FirstView(),

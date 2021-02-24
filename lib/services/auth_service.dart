@@ -8,6 +8,7 @@ class AuthService {
     return (_firebaseAuth.currentUser).uid;
   }
 
+// Emial and Password Sign In
   Future<bool> signIn(String email, String password) async {
     try {
       await _firebaseAuth.signInWithEmailAndPassword(
@@ -23,7 +24,7 @@ class AuthService {
     }
   }
 
-  // Email and Password Sign Up
+// Email and Password Sign Up
   Future<bool> register(String email, String password) async {
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
@@ -40,5 +41,10 @@ class AuthService {
       print(e);
     }
     return false;
+  }
+
+// Sign Out
+  signOut() {
+    return _firebaseAuth.signOut();
   }
 }

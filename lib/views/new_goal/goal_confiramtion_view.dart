@@ -13,7 +13,7 @@ class NewGoalConfirmationView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Confirm your Goals"),
+        title: Text("Confirm your Goal"),
       ),
       body: Center(
         child: Column(

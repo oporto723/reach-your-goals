@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
-
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:reachYourGoals/constants.dart';
 import 'package:reachYourGoals/models/goal.dart';
 
 class HomeView extends StatelessWidget {
@@ -25,7 +24,7 @@ class HomeView extends StatelessWidget {
 
   Widget buildGoalCard(BuildContext context, int index) {
     final goal = goalsList[index];
-    return new Center(
+    return Center(
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Stack(
@@ -38,39 +37,46 @@ class HomeView extends StatelessWidget {
     );
   }
 
-  final planetThumbnail = new Container(
-    margin: new EdgeInsets.symmetric(vertical: 16.0),
+  final planetThumbnail = Container(
+    margin: EdgeInsets.symmetric(vertical: 15.0),
     alignment: FractionalOffset.centerLeft,
     child: Container(
-      height: 92.0,
-      width: 92.0,
-      decoration: new BoxDecoration(
+      height: 100.0,
+      width: 125.0,
+      decoration: BoxDecoration(
         shape: BoxShape.circle,
         image: DecorationImage(
-          image: new NetworkImage('https://googleflutter.com/sample_image.jpg'),
+          // TODO: New to be specific for every goal.
+          image: Svg('assets/Hiking.svg'),
         ),
       ),
     ),
   );
 
-  final planetCard = new Container(
-    height: 124.0,
-    margin: new EdgeInsets.only(left: 46.0),
-    decoration: new BoxDecoration(
-      color: new Color(0xFF333366),
+  final planetCard = Container(
+    height: 125.0,
+    margin: EdgeInsets.only(left: 45.0),
+    decoration: BoxDecoration(
+      color: KPrimaryColor,
       shape: BoxShape.rectangle,
-      borderRadius: new BorderRadius.circular(8.0),
+      borderRadius: BorderRadius.circular(8.0),
       boxShadow: <BoxShadow>[
-        new BoxShadow(
+        BoxShadow(
           color: Colors.black12,
           blurRadius: 10.0,
-          offset: new Offset(0.0, 10.0),
+          offset: Offset(0.0, 10.0),
         ),
       ],
     ),
-    child: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(color: new Color(0xFF333366)),
+    child: Column(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(color: KPrimaryColor),
+        ),
+        Text('Goal Name'),
+        Text('Date')
+      ],
     ),
   );
 }
