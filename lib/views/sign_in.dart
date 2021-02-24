@@ -54,6 +54,7 @@ class SignIn extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: RoundedButton(
                   text: "LOGIN",
+                  color: Color(0xff795548),
                   press: () async {
                     bool shouldNavigate = await _authService.signIn(
                         _emailField.text, _passwordField.text);
@@ -71,6 +72,7 @@ class SignIn extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 32.0),
                 child: RoundedButton(
                   text: "REGISTER",
+                  color: Color(0xff795548),
                   press: () async {
                     bool shouldNavigate = await _authService.register(
                         _emailField.text, _passwordField.text);
